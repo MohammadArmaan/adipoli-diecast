@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     title: "Anup Wheels – Ignite Your Collection",
     description:
       "Premium die-cast cars, limited drops, and racing legends. Discover exclusive Hot Wheels collectibles.",
-    url: "https://yourdomain.com",
+    url: "https://anup-wheels.vercel.app/",
     siteName: "Anup Wheels",
     images: [
       {
