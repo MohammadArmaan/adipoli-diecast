@@ -6,7 +6,7 @@ export const revalidate = 60;
 
 async function getBlogPostBySlug(slug: string) {
   try {
-    const wixClient = getWixServerClient();
+    const wixClient = await getWixServerClient();
 
     const { items } = await wixClient.posts
       .queryPosts()
@@ -50,12 +50,18 @@ function getPostImageUri(post: any): string | null {
   if (!hero) return null;
   if (typeof hero === "string" && hero) return hero;
   if (typeof hero === "object") {
-    return hero.id ?? hero.url ?? hero?.image?.src?.url ?? hero?.src?.url ?? null;
+    return (
+      hero.id ?? hero.url ?? hero?.image?.src?.url ?? hero?.src?.url ?? null
+    );
   }
   return null;
 }
 
-function buildImageUrl(post: any, width: number, height: number): string | null {
+function buildImageUrl(
+  post: any,
+  width: number,
+  height: number,
+): string | null {
   const uri = getPostImageUri(post);
   if (!uri) return null;
   if (uri.startsWith("wix:image://")) return wixUriToCdnUrl(uri, width, height);
@@ -204,7 +210,8 @@ function nodeToHtml(node: any): string {
           case "FONT_SIZE": {
             const size = d.fontSizeData?.value ?? "";
             const unit = d.fontSizeData?.unit?.toLowerCase() ?? "px";
-            if (size) text = `<span style="font-size:${size}${unit}">${text}</span>`;
+            if (size)
+              text = `<span style="font-size:${size}${unit}">${text}</span>`;
             break;
           }
         }
@@ -223,11 +230,11 @@ function nodeToHtml(node: any): string {
    Page Component
 --------------------------------------------------------------- */
 type BlogPostPageProps = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
-
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  const post = await getBlogPostBySlug(params.slug);
+  const { slug } = await params;
+  const post = await getBlogPostBySlug(slug);
   if (!post) notFound();
 
   const heroImageUrl = buildImageUrl(post, 1200, 600);
@@ -296,7 +303,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         <div className="mt-16 text-center">
           <a
             href="/blog"
-            className="inline-block rounded-xl border border-border px-6 py-3 font-semibold hover:bg-muted transition-colors"
+            className="inline-block rounded-xl border border-border px-6 py-3 font-semibold transition-colors hover:bg-muted"
           >
             ← Back to Blogs
           </a>

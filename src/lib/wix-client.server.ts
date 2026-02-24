@@ -6,12 +6,19 @@ import { cache } from "react";
 import { WIX_SESSION_COOKIE } from "./constants";
 import { getWixClient } from "./wix-client.base";
 
-export const getWixServerClient = cache(() => {
+export const getWixServerClient = cache(async () => {
   let tokens: Tokens | undefined;
 
   try {
-    tokens = JSON.parse(cookies().get(WIX_SESSION_COOKIE)?.value || "{}");
-  } catch (error) {}
+    const cookieStore = await cookies();
+    const sessionCookie = cookieStore.get(WIX_SESSION_COOKIE)?.value;
+
+    if (sessionCookie) {
+      tokens = JSON.parse(sessionCookie);
+    }
+  } catch (error) {
+    console.error("Failed to parse Wix session cookie:", error);
+  }
 
   return getWixClient(tokens);
 });

@@ -9,14 +9,17 @@ import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
 interface PageProps {
-  params: { slug: string };
-  searchParams: { page?: string };
+  params: Promise<{ slug: string }>;
+  searchParams: Promise<{ page?: string }>;
 }
 
-export async function generateMetadata({
-  params: { slug },
-}: PageProps): Promise<Metadata> {
-  const collection = await getCollectionBySlug(getWixServerClient(), slug);
+export async function generateMetadata(
+  { params }: PageProps
+): Promise<Metadata> {
+
+  const { slug } = await params; 
+  const wixClient = await getWixServerClient()
+  const collection = await getCollectionBySlug(wixClient, slug);
 
   if (!collection) notFound();
 
@@ -38,10 +41,15 @@ export async function generateMetadata({
 }
 
 export default async function Page({
-  params: { slug },
-  searchParams: { page = "1" },
+  params,
+  searchParams,
 }: PageProps) {
-  const collection = await getCollectionBySlug(getWixServerClient(), slug);
+
+  const { slug } = await params; 
+  const { page = "1" } = await searchParams; 
+  
+  const wixClient = await getWixServerClient()
+  const collection = await getCollectionBySlug(wixClient, slug);
 
   if (!collection?._id) notFound();
 
@@ -63,7 +71,9 @@ interface ProductsProps {
 async function Products({ collectionId, page }: ProductsProps) {
   const pageSize = 8;
 
-  const collectionProducts = await queryProducts(getWixServerClient(), {
+  const wixClient = await getWixServerClient()
+
+  const collectionProducts = await queryProducts(wixClient, {
     collectionIds: collectionId,
     limit: pageSize,
     skip: (page - 1) * pageSize,

@@ -3,18 +3,28 @@ import { getProductById } from "@/wix-api/products";
 import { notFound, redirect } from "next/navigation";
 
 interface PageProps {
-  params: { id: string };
-  searchParams: any;
+  params: Promise<{ id: string }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 }
 
 export default async function Page({ params, searchParams }: PageProps) {
-  if (params.id === "someId") {
-    redirect(`/products/i-m-a-product-1?${new URLSearchParams(searchParams)}`);
+  const { id } = await params;              
+  const resolvedSearchParams = await searchParams; 
+
+  const queryString = new URLSearchParams(
+    resolvedSearchParams as Record<string, string>
+  ).toString();
+
+  if (id === "someId") {
+    redirect(`/products/i-m-a-product-1${queryString ? `?${queryString}` : ""}`);
   }
 
-  const product = await getProductById(getWixServerClient(), params.id);
+  const wixClient = await getWixServerClient();
+  const product = await getProductById(wixClient, id);
 
   if (!product) notFound();
 
-  redirect(`/products/${product.slug}?${new URLSearchParams(searchParams)}`);
+  redirect(
+    `/products/${product.slug}${queryString ? `?${queryString}` : ""}`
+  );
 }

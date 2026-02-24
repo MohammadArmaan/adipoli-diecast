@@ -18,13 +18,15 @@ import ProductDescriptionSection from "./ProductDescriptionSection";
 import ProductAdditionalInfoSection from "./ProductAdditionalInfoSection";
 
 interface PageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
-export async function generateMetadata({
-  params: { slug },
-}: PageProps): Promise<Metadata> {
-  const product = await getProductBySlug(getWixServerClient(), slug);
+export async function generateMetadata(
+  { params }: PageProps
+): Promise<Metadata> {
+  const { slug } = await params;
+  const wixClient = await getWixServerClient()
+  const product = await getProductBySlug(wixClient, slug);
 
   if (!product) notFound();
 
@@ -48,8 +50,12 @@ export async function generateMetadata({
   };
 }
 
-export default async function Page({ params: { slug } }: PageProps) {
-  const product = await getProductBySlug(getWixServerClient(), slug);
+export default async function Page(
+  { params }: PageProps) {
+  const { slug } = await params;
+  const wixClient = await getWixServerClient();
+
+  const product = await getProductBySlug(wixClient, slug);
 
   if (!product?._id) notFound();
 
@@ -81,8 +87,10 @@ interface RelatedProductsProps {
 }
 
 async function RelatedProducts({ productId }: RelatedProductsProps) {
+  const wixClient = await getWixServerClient();
+
   const relatedProducts = await getRelatedProducts(
-    getWixServerClient(),
+    wixClient,
     productId,
   );
 
@@ -117,7 +125,7 @@ interface ProductReviewsSectionProps {
 async function ProductReviewsSection({ product }: ProductReviewsSectionProps) {
   if (!product._id) return null;
 
-  const wixClient = getWixServerClient();
+  const wixClient = await getWixServerClient();
 
   const loggedInMember = await getLoggedInMember(wixClient);
 

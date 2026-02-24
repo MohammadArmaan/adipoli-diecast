@@ -8,7 +8,9 @@ export default async function Layout({
 }: {
   children: React.ReactNode;
 }) {
-  const collections = await getCollections(getWixServerClient());
+  const wixClient = await getWixServerClient();
+
+  const collections = await getCollections(wixClient);
 
   return (
     <>

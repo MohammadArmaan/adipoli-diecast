@@ -14,24 +14,29 @@ export async function GET(req: NextRequest) {
     return new Response(error_description, { status: 400 });
   }
 
+  // ✅ Await cookies()
+  const cookieStore = await cookies();
+
   const oAuthData: OauthData = JSON.parse(
-    cookies().get(WIX_OAUTH_DATA_COOKIE)?.value || "{}",
+    cookieStore.get(WIX_OAUTH_DATA_COOKIE)?.value || "{}"
   );
 
   if (!code || !state || !oAuthData) {
     return new Response("Invalid request", { status: 400 });
   }
 
-  const wixClient = getWixServerClient();
+  const wixClient = await getWixServerClient();
 
   const memberTokens = await wixClient.auth.getMemberTokens(
     code,
     state,
-    oAuthData,
+    oAuthData
   );
 
-  cookies().delete(WIX_OAUTH_DATA_COOKIE);
-  cookies().set(WIX_SESSION_COOKIE, JSON.stringify(memberTokens), {
+  // ✅ Use cookieStore
+  cookieStore.delete(WIX_OAUTH_DATA_COOKIE);
+
+  cookieStore.set(WIX_SESSION_COOKIE, JSON.stringify(memberTokens), {
     maxAge: 60 * 60 * 24 * 14,
     secure: process.env.NODE_ENV === "production",
   });

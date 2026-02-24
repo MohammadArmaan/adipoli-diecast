@@ -6,7 +6,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export default async function FeaturedProducts() {
-  const wixClient = getWixServerClient();
+  const wixClient = await getWixServerClient();
 
   const result = await wixClient.products
     .queryProducts()

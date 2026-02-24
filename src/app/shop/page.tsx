@@ -9,37 +9,41 @@ import { Suspense } from "react";
 import AnimatedShopProduct from "./AnimatedShopProduct";
 
 interface PageProps {
-  searchParams: {
+  searchParams: Promise<{
     q?: string;
     page?: string;
     collection?: string[];
     price_min?: string;
     price_max?: string;
     sort?: string;
-  };
+  }>;
 }
 
-export function generateMetadata({ searchParams: { q } }: PageProps): Metadata {
+export async function generateMetadata(props: PageProps): Promise<Metadata> {
+  const searchParams = await props.searchParams;
+  const q = searchParams?.q;
+
   return {
     title: q ? `Results for "${q}"` : "Products",
   };
 }
 
-export default async function Page({
-  searchParams: {
-    q,
-    page = "1",
-    collection: collectionIds,
-    price_min,
-    price_max,
-    sort,
-  },
-}: PageProps) {
+export default async function Page(props: PageProps) {
+  const searchParams = await props.searchParams;
+
+  const q = searchParams?.q;
+  const page = searchParams?.page ?? "1";
+  const collectionIds = searchParams?.collection;
+  const price_min = searchParams?.price_min;
+  const price_max = searchParams?.price_max;
+  const sort = searchParams?.sort;
+
   const title = q ? `Results for "${q}"` : "Products";
 
   return (
     <div className="space-y-10">
       <h1 className="text-center text-3xl font-bold md:text-4xl">{title}</h1>
+
       <Suspense fallback={<LoadingSkeleton />} key={`${q}-${page}`}>
         <ProductResults
           q={q}
@@ -73,7 +77,9 @@ async function ProductResults({
 }: ProductResultsProps) {
   const pageSize = 8;
 
-  const products = await queryProducts(getWixServerClient(), {
+  const wixClient = await getWixServerClient();
+
+  const products = await queryProducts(wixClient, {
     q,
     limit: pageSize,
     skip: (page - 1) * pageSize,
@@ -92,10 +98,10 @@ async function ProductResults({
         {products.totalCount === 1 ? "product" : "products"} found
       </p>
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4">
-  {products.items.map((product) => (
-    <AnimatedShopProduct key={product._id} product={product} />
-  ))}
-</div>
+        {products.items.map((product) => (
+          <AnimatedShopProduct key={product._id} product={product} />
+        ))}
+      </div>
 
       <PaginationBar currentPage={page} totalPages={products.totalPages || 1} />
     </div>
@@ -114,6 +120,3 @@ function LoadingSkeleton() {
     </div>
   );
 }
-
-
-

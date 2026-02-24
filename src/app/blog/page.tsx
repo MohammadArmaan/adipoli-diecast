@@ -6,7 +6,7 @@ export const revalidate = 60;
 
 async function getAllBlogPosts(limit = 100) {
   try {
-    const wixClient = getWixServerClient();
+    const wixClient = await getWixServerClient();
 
     const { items } = await wixClient.posts
       .queryPosts()
