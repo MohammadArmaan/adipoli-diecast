@@ -9,7 +9,7 @@ export default function CTASection() {
       {/* Orange Glow Burst */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,hsl(var(--primary)/0.25),transparent_70%)] pointer-events-none" />
 
-      <div className="relative">
+      <div className="relative flex justify-center flex-col items-center">
         <Flame className="mx-auto mb-6 h-14 w-14 text-primary drop-shadow-[0_0_20px_hsl(var(--primary)/0.8)]" />
 
         <h2 className="mb-6 text-4xl font-extrabold uppercase tracking-wider md:text-5xl">
@@ -22,7 +22,7 @@ export default function CTASection() {
         </p>
 
         <Link href="/shop">
-          <Button className="group bg-primary px-12 py-5 text-lg font-bold uppercase tracking-wide transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_hsl(var(--primary)/0.7)]">
+          <Button className="group bg-primary px-12 py-5 text-lg font-bold uppercase tracking-wide transition-all  duration-300 hover:scale-105 hover:shadow-[0_0_40px_hsl(var(--primary)/0.7)]">
             Explore Latest Drops
           </Button>
         </Link>

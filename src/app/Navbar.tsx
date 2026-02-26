@@ -35,9 +35,9 @@ export default async function Navbar() {
 
         {/* LEFT SIDE */}
         <div className="flex items-center gap-6">
-          <Link href="/" className="group flex items-center gap-3">
-            <Image src={logo} alt="Anup Wheels Logo" width={42} height={42} />
-            <h1 className="text-xl font-extrabold tracking-wide text-primary transition-colors group-hover:text-primary">
+          <Link href="/" className="group flex items-center gap-1 md:gap-3">
+            <Image src={logo} alt="Anup Wheels Logo" width={50} height={50} />
+            <h1 className="md:text-xl text-lg font-extrabold text-nowrap tracking-wide text-primary transition-colors group-hover:text-primary">
               ANUP WHEELS
             </h1>
           </Link>

@@ -92,15 +92,15 @@ function Review({
         <div className="flex items-center gap-2">
           {Array.from({ length: 5 }).map((_, i) => (
             <StarIcon
-              key={i}
-              className={cn(
-                "size-5 text-primary",
-                i < (content?.rating || 0) && "fill-primary",
-              )}
+            key={i}
+            className={cn(
+              "size-5 text-primary",
+              i < (content?.rating || 0) && "fill-primary",
+            )}
             />
           ))}
-          {content?.title && <h3 className="font-bold">{content.title}</h3>}
         </div>
+          {content?.title && <h3 className="font-bold">{content.title}</h3>}
         <p className="text-sm text-muted-foreground">
           by {author?.authorName || "Anonymous"}
           {reviewDate && <> on {new Date(reviewDate).toLocaleDateString()}</>}

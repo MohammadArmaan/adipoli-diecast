@@ -157,7 +157,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
 
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {/* Authentic */}
-                <div className="group flex flex-col items-center rounded-xl bg-card p-8 text-center shadow-xl transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_0_40px_hsl(var(--primary)/0.25)]">
+                <div className="group relative overflow-hidden flex flex-col items-center rounded-2xl bg-card p-8 text-center shadow-xl transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_0_40px_hsl(var(--primary)/0.25)]">
                   
 
                   <ShieldCheckIcon className="mb-3 h-6 w-6 text-primary transition-transform duration-500 group-hover:scale-110" />
@@ -171,7 +171,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
                 </div>
 
                 {/* Limited Drops */}
-                <div className="group flex flex-col items-center rounded-xl bg-card p-8 text-center shadow-xl transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_0_40px_hsl(var(--primary)/0.25)]">
+                <div className="group relative overflow-hidden flex flex-col items-center rounded-2xl bg-card p-8 text-center shadow-xl transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_0_40px_hsl(var(--primary)/0.25)]">
                   
 
                   <Flame className="mb-3 h-6 w-6 text-primary transition-transform duration-500 group-hover:scale-110" />
@@ -185,7 +185,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
                 </div>
 
                 {/* Secure Checkout */}
-                <div className="group flex flex-col items-center rounded-xl bg-card p-8 text-center shadow-xl transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_0_40px_hsl(var(--primary)/0.25)]">
+                <div className="group relative overflow-hidden flex flex-col items-center rounded-2xl bg-card p-8 text-center shadow-xl transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_0_40px_hsl(var(--primary)/0.25)]">
                   
                   <CheckCircleIcon className="mb-3 h-6 w-6 text-primary transition-transform duration-500 group-hover:scale-110" />
 
@@ -224,7 +224,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
 
                   <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                     {/* Authentic */}
-                    <div className="group flex flex-col items-center rounded-xl bg-card p-8 text-center shadow-xl transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_0_40px_hsl(var(--primary)/0.25)]">
+                    <div className="group relative overflow-hidden flex flex-col items-center rounded-2xl bg-card p-8 text-center shadow-xl transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_0_40px_hsl(var(--primary)/0.25)]">
                       
 
                       <ShieldCheckIcon className="mb-3 h-6 w-6 text-primary transition-transform duration-500 group-hover:scale-110" />
@@ -238,7 +238,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
                     </div>
 
                     {/* Limited Drops */}
-                    <div className="group flex flex-col items-center rounded-xl bg-card p-8 text-center shadow-xl transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_0_40px_hsl(var(--primary)/0.25)]">
+                    <div className="group relative overflow-hidden flex flex-col items-center rounded-2xl bg-card p-8 text-center shadow-xl transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_0_40px_hsl(var(--primary)/0.25)]">
                       
 
                       <Flame className="mb-3 h-6 w-6 text-primary transition-transform duration-500 group-hover:scale-110" />
@@ -252,7 +252,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
                     </div>
 
                     {/* Secure Checkout */}
-                    <div className="group flex flex-col items-center rounded-xl bg-card p-8 text-center shadow-xl transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_0_40px_hsl(var(--primary)/0.25)]">
+                    <div className="group relative overflow-hidden flex flex-col items-center rounded-2xl bg-card p-8 text-center shadow-xl transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_0_40px_hsl(var(--primary)/0.25)]">
                       
                       <CheckCircleIcon className="mb-3 h-6 w-6 text-primary transition-transform duration-500 group-hover:scale-110" />
 

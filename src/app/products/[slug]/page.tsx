@@ -71,7 +71,6 @@ export default async function Page(
         <RelatedProducts productId={product._id} />
       </Suspense>
       <hr />
-      <hr />
       <div className="space-y-5">
         <h2 className="text-2xl font-bold">Buyer reviews</h2>
         <Suspense fallback={<ProductReviewsLoadingSkeleton />}>

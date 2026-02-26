@@ -109,7 +109,7 @@ export default function HeroSlider() {
                         </span>
                       </h1>
 
-                      <p className="description">
+                      <p className="description font-semibold">
                         {slide.description}
                       </p>
 
