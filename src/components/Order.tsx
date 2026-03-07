@@ -5,13 +5,14 @@ import { formatDate } from "date-fns";
 import Link from "next/link";
 import Badge from "./ui/badge";
 import WixImage from "./WixImage";
+import OrderTracking from "./OrderTracking";
 
 interface OrderProps {
   order: orders.Order;
 }
 
 export default function Order({ order }: OrderProps) {
-const paymentStatusMap: Partial<Record<orders.PaymentStatus, string>> = {
+  const paymentStatusMap: Partial<Record<orders.PaymentStatus, string>> = {
     [orders.PaymentStatus.PAID]: "Paid",
     [orders.PaymentStatus.NOT_PAID]: "Not paid",
     [orders.PaymentStatus.FULLY_REFUNDED]: "Refunded",
@@ -59,6 +60,7 @@ const paymentStatusMap: Partial<Record<orders.PaymentStatus, string>> = {
               <span>
                 Subtotal: {order.priceSummary?.subtotal?.formattedAmount}
               </span>
+
               <Badge
                 className={cn(
                   "bg-secondary text-secondary-foreground",
@@ -71,9 +73,13 @@ const paymentStatusMap: Partial<Record<orders.PaymentStatus, string>> = {
                 {paymentStatus || "No information"}
               </Badge>
             </div>
+
             <div className="font-semibold">
               {fulfillmentStatus || "No information"}
             </div>
+
+            {/* 🚚 ORDER TRACKING TIMELINE */}
+            <OrderTracking fulfillmentStatus={order.fulfillmentStatus} />
           </div>
           <div className="divide-y">
             {order.lineItems?.map((item) => (
