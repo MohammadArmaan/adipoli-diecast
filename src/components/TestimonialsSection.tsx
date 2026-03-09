@@ -19,7 +19,7 @@ export default function TestimonialsSection() {
     {
       name: "Rajiv Patel",
       location: "Ahmedabad, Gujarat",
-      text: "Anup Wheels feels like a proper collector’s garage. Every car I’ve ordered has exceeded expectations.",
+      text: "Adipoli Diecast feels like a proper collector’s garage. Every car I’ve ordered has exceeded expectations.",
       rating: 5,
       collection: "Premium Die-Cast Enthusiast",
     },
@@ -36,7 +36,7 @@ export default function TestimonialsSection() {
           </span>{" "}
           Say
         </h2>
-        <p className="mx-auto max-w-2xl text-lg text-muted-foreground mb-10">
+        <p className="mx-auto mb-10 max-w-2xl text-lg text-muted-foreground">
           Real feedback from racing enthusiasts and die-cast collectors across
           India.
         </p>

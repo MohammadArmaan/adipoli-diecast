@@ -92,15 +92,15 @@ function Review({
         <div className="flex items-center gap-2">
           {Array.from({ length: 5 }).map((_, i) => (
             <StarIcon
-            key={i}
-            className={cn(
-              "size-5 text-primary",
-              i < (content?.rating || 0) && "fill-primary",
-            )}
+              key={i}
+              className={cn(
+                "size-5 text-primary",
+                i < (content?.rating || 0) && "fill-primary",
+              )}
             />
           ))}
         </div>
-          {content?.title && <h3 className="font-bold">{content.title}</h3>}
+        {content?.title && <h3 className="font-bold">{content.title}</h3>}
         <p className="text-sm text-muted-foreground">
           by {author?.authorName || "Anonymous"}
           {reviewDate && <> on {new Date(reviewDate).toLocaleDateString()}</>}
@@ -122,12 +122,12 @@ function Review({
             <CornerDownRight className="size-5" />
             <Image
               src={logo}
-              alt="Anup Wheels logo"
+              alt="Adipoli Diecast logo"
               width={24}
               height={24}
               className="size-5"
             />
-            <span className="font-bold">Anup Wheels Team</span>
+            <span className="font-bold">Adipoli Diecast Team</span>
           </div>
           <div className="whitespace-pre-line">{reply.message}</div>
         </div>

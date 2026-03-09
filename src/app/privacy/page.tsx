@@ -2,7 +2,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "Privacy policy for Anup Wheels",
+  description: "Privacy policy for Adipoli Diecast",
 };
 
 export default function Page() {
@@ -12,7 +12,7 @@ export default function Page() {
         {/* Header */}
         <h2 className="text-3xl font-bold">PRIVACY POLICY</h2>
         <p>
-          At Anup Wheels, we value the trust you place in us. This Privacy
+          At Adipoli Diecast, we value the trust you place in us. This Privacy
           Policy explains how we handle your information when you visit our
           website or place an order for our pet food products.
         </p>

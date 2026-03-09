@@ -21,11 +21,11 @@ interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
-export async function generateMetadata(
-  { params }: PageProps
-): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const wixClient = await getWixServerClient()
+  const wixClient = await getWixServerClient();
   const product = await getProductBySlug(wixClient, slug);
 
   if (!product) notFound();
@@ -34,7 +34,7 @@ export async function generateMetadata(
 
   return {
     title: product.name,
-    description: "Get this product on Anup Wheels",
+    description: "Get this product on Adipoli Diecast",
     openGraph: {
       images: mainImage?.url
         ? [
@@ -50,8 +50,7 @@ export async function generateMetadata(
   };
 }
 
-export default async function Page(
-  { params }: PageProps) {
+export default async function Page({ params }: PageProps) {
   const { slug } = await params;
   const wixClient = await getWixServerClient();
 
@@ -88,10 +87,7 @@ interface RelatedProductsProps {
 async function RelatedProducts({ productId }: RelatedProductsProps) {
   const wixClient = await getWixServerClient();
 
-  const relatedProducts = await getRelatedProducts(
-    wixClient,
-    productId,
-  );
+  const relatedProducts = await getRelatedProducts(wixClient, productId);
 
   if (!relatedProducts.length) return null;
 

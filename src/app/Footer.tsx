@@ -10,15 +10,19 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 gap-x-12 gap-y-16 md:col-span-3 lg:grid-cols-6">
           <div className="col-span-2 md:col-span-3 lg:col-span-2 lg:pr-8">
-            <div className="text-2xl font-bold flex items-center gap-2">
-              <Image src={logo} height={50} width={50} alt="Anup Wheels Logo" />
-              <span className="text-primary">Anup Wheels</span>
-              
-              </div>
+            <div className="flex items-center gap-2 text-2xl font-bold">
+              <Image
+                src={logo}
+                height={50}
+                width={50}
+                alt="Adipoli Diecast Logo"
+              />
+              <span className="text-primary">Adipoli Diecast</span>
+            </div>
             <p className="mt-7 text-base leading-relaxed text-muted-foreground">
-              Anup Wheels — your destination for premium die-cast collectibles,
-              limited edition drops, and iconic racing legends built for true
-              enthusiasts.
+              Adipoli Diecast — your destination for premium die-cast
+              collectibles, limited edition drops, and iconic racing legends
+              built for true enthusiasts.
             </p>
 
             <ul className="mt-9 flex items-center space-x-3">

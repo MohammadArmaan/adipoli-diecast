@@ -3,35 +3,35 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Support",
   description:
-    "Need help with your order or a limited drop? Contact Anup Wheels support for assistance with purchases, shipping, and collector inquiries.",
+    "Need help with your order or a limited drop? Contact Adipoli Diecast support for assistance with purchases, shipping, and collector inquiries.",
 };
 
 export default function Page() {
   return (
     <main className="mx-auto max-w-5xl px-6 py-16">
       <div className="space-y-16 text-center">
-
         {/* Header */}
         <div className="space-y-6">
           <h1 className="text-5xl font-extrabold uppercase tracking-wider text-foreground">
             Collector <span className="text-primary">Support</span>
           </h1>
-          <p className="mx-auto max-w-3xl text-lg text-muted-foreground leading-8">
+          <p className="mx-auto max-w-3xl text-lg leading-8 text-muted-foreground">
             Whether it’s a limited drop, an order inquiry, or product details —
-            our team is here to ensure your experience with Anup Wheels is smooth and reliable.
+            our team is here to ensure your experience with Adipoli Diecast is
+            smooth and reliable.
           </p>
         </div>
 
         {/* Support Section */}
         <div className="relative rounded-3xl bg-[linear-gradient(135deg,#0f0f0f,#1a1a1a)] p-12 text-left shadow-2xl">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,hsl(var(--primary)/0.15),transparent_70%)] pointer-events-none rounded-3xl" />
+          <div className="pointer-events-none absolute inset-0 rounded-3xl bg-[radial-gradient(circle_at_30%_30%,hsl(var(--primary)/0.15),transparent_70%)]" />
 
           <div className="relative space-y-6">
-            <h2 className="text-3xl font-extrabold uppercase tracking-wide text-center text-primary">
+            <h2 className="text-center text-3xl font-extrabold uppercase tracking-wide text-primary">
               How We Can Help
             </h2>
 
-            <ul className="space-y-3 text-gray-300 leading-7 list-disc list-inside">
+            <ul className="list-inside list-disc space-y-3 leading-7 text-gray-300">
               <li>Order tracking & shipping updates</li>
               <li>Product authenticity & details</li>
               <li>Limited edition drop information</li>
@@ -40,8 +40,8 @@ export default function Page() {
             </ul>
 
             <p className="pt-4 text-gray-300">
-              For assistance, please reach out through our contact form or official
-              support email listed on the website.
+              For assistance, please reach out through our contact form or
+              official support email listed on the website.
             </p>
           </div>
         </div>
@@ -51,16 +51,15 @@ export default function Page() {
           <h2 className="text-3xl font-bold uppercase tracking-wide">
             Online-Only Store
           </h2>
-          <p className="mx-auto max-w-2xl text-muted-foreground leading-8">
-            Anup Wheels currently operates exclusively online. We do not have a
-            physical retail location at this time. All purchases, support
+          <p className="mx-auto max-w-2xl leading-8 text-muted-foreground">
+            Adipoli Diecast currently operates exclusively online. We do not
+            have a physical retail location at this time. All purchases, support
             inquiries, and updates are handled digitally.
           </p>
-          <p className="text-foreground/90 font-bold">
+          <p className="font-bold text-foreground/90">
             Shipping available across India.
           </p>
         </div>
-
       </div>
     </main>
   );

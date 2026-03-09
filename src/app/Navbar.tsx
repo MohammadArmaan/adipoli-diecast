@@ -28,23 +28,24 @@ export default async function Navbar() {
         {/* Glass highlight overlay */}
         <div className="pointer-events-none absolute inset-0 rounded-2xl bg-[linear-gradient(120deg,rgba(255,255,255,0.25),transparent_40%)] opacity-20" />
         <Suspense>
-          <MobileMenu
-            loggedInMember={loggedInMember}
-          />
+          <MobileMenu loggedInMember={loggedInMember} />
         </Suspense>
 
         {/* LEFT SIDE */}
         <div className="flex items-center gap-6">
           <Link href="/" className="group flex items-center gap-1 md:gap-3">
-            <Image src={logo} alt="Anup Wheels Logo" width={50} height={50} />
-            <h1 className="md:text-xl text-lg font-extrabold text-nowrap tracking-wide text-primary transition-colors group-hover:text-primary">
-              ANUP WHEELS
+            <Image
+              src={logo}
+              alt="Adipoli Diecast Logo"
+              width={50}
+              height={50}
+            />
+            <h1 className="text-nowrap text-lg font-extrabold tracking-wide text-primary transition-colors group-hover:text-primary md:text-xl">
+              ADIPOLI DIECAST
             </h1>
           </Link>
 
-          <MainNavigation
-            className="hidden lg:flex"
-          />
+          <MainNavigation className="hidden lg:flex" />
         </div>
 
         {/* SEARCH */}

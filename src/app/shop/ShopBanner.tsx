@@ -18,7 +18,6 @@ const ShopBanner = () => {
 
   return (
     <section className="relative h-[720px] w-full overflow-hidden bg-[#0f0f0f] lg:h-[650px]">
-
       {/* Track Texture Background */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,hsl(var(--primary)/0.25),transparent_60%)]" />
       <div className="absolute inset-0 bg-[linear-gradient(120deg,#000000,#111111,#000000)] opacity-90" />
@@ -30,7 +29,6 @@ const ShopBanner = () => {
 
       {/* Main Content */}
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 lg:flex-row lg:px-20">
-
         {/* LEFT SIDE */}
         <div className="max-w-2xl text-center lg:text-left">
           <h1 className="text-5xl font-extrabold uppercase tracking-wider text-white md:text-6xl lg:text-7xl">
@@ -55,21 +53,20 @@ const ShopBanner = () => {
         {/* RIGHT SIDE - DRIFTING IMAGE */}
         <div className="relative mt-16 flex flex-1 justify-center lg:mt-0 lg:justify-end">
           <div className="relative h-[350px] w-[350px] lg:h-[450px] lg:w-[450px]">
-
             {/* Drift Smoke Glow */}
             <div className="absolute inset-0 animate-pulse rounded-full bg-[radial-gradient(circle,hsl(var(--primary)/0.35),transparent_70%)] blur-2xl" />
 
             {/* Car Image */}
             <Image
               src={Banner}
-              alt="Anup Wheels Collection"
+              alt="Adipoli Diecast Collection"
               fill
               priority
-              className="object-contain drift-car-animation drop-shadow-[0_30px_40px_rgba(0,0,0,0.9)]"
+              className="drift-car-animation object-contain drop-shadow-[0_30px_40px_rgba(0,0,0,0.9)]"
             />
 
             {/* Flame Trail Effect */}
-            <div className="absolute bottom-10 left-10 h-2 w-40 animate-flame bg-gradient-to-r from-primary via-orange-500 to-transparent blur-md" />
+            <div className="animate-flame absolute bottom-10 left-10 h-2 w-40 bg-gradient-to-r from-primary via-orange-500 to-transparent blur-md" />
           </div>
         </div>
       </div>
@@ -103,8 +100,12 @@ const ShopBanner = () => {
         }
 
         @keyframes moveTrack {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-120px); }
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-120px);
+          }
         }
 
         /* Drift Animation */
@@ -126,8 +127,14 @@ const ShopBanner = () => {
 
         /* Flame Effect */
         @keyframes flameMove {
-          0% { transform: translateX(0); opacity: 0.8; }
-          100% { transform: translateX(40px); opacity: 0; }
+          0% {
+            transform: translateX(0);
+            opacity: 0.8;
+          }
+          100% {
+            transform: translateX(40px);
+            opacity: 0;
+          }
         }
 
         .animate-flame {

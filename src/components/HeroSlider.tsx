@@ -33,7 +33,7 @@ const slideContents: SlideContent[] = [
     description: "Build your ultimate Hot Wheels collection.",
     buttonText: "Shop Now",
     buttonLink: "/shop",
-    brandName: "ANUP WHEELS",
+    brandName: "ADIPOLI DIECAST",
   },
   {
     image: banner2,
@@ -42,7 +42,7 @@ const slideContents: SlideContent[] = [
     description: "Premium die-cast models for real collectors.",
     buttonText: "Explore Cars",
     buttonLink: "/shop",
-    brandName: "ANUP WHEELS",
+    brandName: "ADIPOLI DIECAST",
   },
   {
     image: banner3,
@@ -51,7 +51,7 @@ const slideContents: SlideContent[] = [
     description: "Limited edition drops. Grab before they vanish.",
     buttonText: "Discover Now",
     buttonLink: "/shop",
-    brandName: "ANUP WHEELS",
+    brandName: "ADIPOLI DIECAST",
   },
 ];
 
@@ -60,7 +60,7 @@ export default function HeroSlider() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="relative mx-auto max-w-7xl px-3 sm:px-4 md:px-6 py-4 sm:py-6 md:py-8 lg:py-12">
+    <div className="relative mx-auto max-w-7xl px-3 py-4 sm:px-4 sm:py-6 md:px-6 md:py-8 lg:py-12">
       <Swiper
         modules={[Autoplay, Pagination]}
         onSwiper={(swiper) => (swiperRef.current = swiper)}
@@ -74,10 +74,11 @@ export default function HeroSlider() {
         grabCursor
         pagination={{
           clickable: true,
-          bulletClass: "swiper-pagination-bullet !bg-white/40 !w-2 !h-2 sm:!w-3 sm:!h-3",
+          bulletClass:
+            "swiper-pagination-bullet !bg-white/40 !w-2 !h-2 sm:!w-3 sm:!h-3",
           bulletActiveClass: "swiper-pagination-bullet-active !bg-primary",
         }}
-        className="h-[350px] sm:h-[450px] md:h-[550px] lg:h-[600px] rounded-xl sm:rounded-2xl lg:rounded-3xl overflow-hidden shadow-xl lg:shadow-2xl"
+        className="h-[350px] overflow-hidden rounded-xl shadow-xl sm:h-[450px] sm:rounded-2xl md:h-[550px] lg:h-[600px] lg:rounded-3xl lg:shadow-2xl"
       >
         {slideContents.map((slide, index) => (
           <SwiperSlide key={index}>
@@ -93,34 +94,24 @@ export default function HeroSlider() {
               <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/80 sm:from-black/70 sm:via-black/40 sm:to-black/70" />
 
               <div className="absolute inset-0 flex items-center justify-center px-4 sm:px-6 md:px-10 lg:px-12">
-                <div className="max-w-full sm:max-w-xl md:max-w-2xl lg:max-w-3xl text-center text-white">
+                <div className="max-w-full text-center text-white sm:max-w-xl md:max-w-2xl lg:max-w-3xl">
                   {activeIndex === index && (
                     <div key={activeIndex} className="animate-wrapper">
-                      <h2 className="brand">
-                        {slide.brandName}
-                      </h2>
+                      <h2 className="brand">{slide.brandName}</h2>
 
                       <h1 className="title">
-                        <span className="block main-title">
-                          {slide.title}
-                        </span>
-                        <span className="block subtitle">
-                          {slide.subtitle}
-                        </span>
+                        <span className="main-title block">{slide.title}</span>
+                        <span className="subtitle block">{slide.subtitle}</span>
                       </h1>
 
                       <p className="description font-semibold">
                         {slide.description}
                       </p>
 
-                      <Button
-                        asChild
-                        size="lg"
-                        className="cta group"
-                      >
+                      <Button asChild size="lg" className="cta group">
                         <Link href={slide.buttonLink}>
                           {slide.buttonText}
-                          <ArrowRight className="ml-2 sm:ml-3 h-4 w-4 sm:h-5 sm:w-5 transition-transform duration-300 group-hover:translate-x-2" />
+                          <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-2 sm:ml-3 sm:h-5 sm:w-5" />
                         </Link>
                       </Button>
                     </div>
@@ -157,7 +148,8 @@ export default function HeroSlider() {
           font-weight: 700;
           letter-spacing: 0.2em;
           color: hsl(var(--primary));
-          animation: slideInFromLeft 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+          animation: slideInFromLeft 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)
+            forwards;
           animation-delay: 0.1s;
           opacity: 0;
         }
@@ -222,7 +214,8 @@ export default function HeroSlider() {
 
         /* Main Title - Drifting Animation */
         .main-title {
-          animation: driftInSmooth 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+          animation: driftInSmooth 1s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+            forwards;
           animation-delay: 0.3s;
           opacity: 0;
           display: inline-block;
@@ -378,12 +371,14 @@ export default function HeroSlider() {
         @keyframes driftInSmooth {
           0% {
             opacity: 0;
-            transform: translateX(-120px) translateY(-15px) rotate(-5deg) scale(0.9);
+            transform: translateX(-120px) translateY(-15px) rotate(-5deg)
+              scale(0.9);
             filter: blur(4px);
           }
           40% {
             opacity: 0.6;
-            transform: translateX(-30px) translateY(-5px) rotate(-2deg) scale(0.95);
+            transform: translateX(-30px) translateY(-5px) rotate(-2deg)
+              scale(0.95);
             filter: blur(2px);
           }
           70% {
@@ -391,7 +386,8 @@ export default function HeroSlider() {
             filter: blur(0px);
           }
           85% {
-            transform: translateX(-4px) translateY(-1px) rotate(-0.5deg) scale(1.01);
+            transform: translateX(-4px) translateY(-1px) rotate(-0.5deg)
+              scale(1.01);
           }
           100% {
             opacity: 1;
@@ -464,16 +460,19 @@ export default function HeroSlider() {
           @keyframes driftInSmooth {
             0% {
               opacity: 0;
-              transform: translateX(-80px) translateY(-10px) rotate(-3deg) scale(0.92);
+              transform: translateX(-80px) translateY(-10px) rotate(-3deg)
+                scale(0.92);
               filter: blur(3px);
             }
             50% {
               opacity: 0.7;
-              transform: translateX(-15px) translateY(-3px) rotate(-1deg) scale(0.97);
+              transform: translateX(-15px) translateY(-3px) rotate(-1deg)
+                scale(0.97);
               filter: blur(1px);
             }
             75% {
-              transform: translateX(8px) translateY(1px) rotate(0.5deg) scale(1.01);
+              transform: translateX(8px) translateY(1px) rotate(0.5deg)
+                scale(1.01);
             }
             100% {
               opacity: 1;

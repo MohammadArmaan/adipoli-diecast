@@ -24,11 +24,11 @@ const titilliumWeb = Titillium_Web({
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Anup Wheels",
-    default: "Anup Wheels",
+    template: "%s | Adipoli Diecast",
+    default: "Adipoli Diecast",
   },
   description:
-    "Discover premium die-cast cars, limited edition Hot Wheels collectibles, and track-ready legends. Ignite your collection with Anup Wheels.",
+    "Discover premium die-cast cars, limited edition Hot Wheels collectibles, and track-ready legends. Ignite your collection with Adipoli Diecast.",
   keywords: [
     "Hot Wheels",
     "Die-cast cars",
@@ -37,17 +37,17 @@ export const metadata: Metadata = {
     "Toy cars India",
   ],
   openGraph: {
-    title: "Anup Wheels – Ignite Your Collection",
+    title: "Adipoli Diecast – Ignite Your Collection",
     description:
       "Premium die-cast cars, limited drops, and racing legends. Discover exclusive Hot Wheels collectibles.",
     url: "https://anup-wheels.vercel.app/",
-    siteName: "Anup Wheels",
+    siteName: "Adipoli Diecast",
     images: [
       {
         url: "/opengraph-image.png",
         width: 1200,
         height: 630,
-        alt: "Anup Wheels Hot Wheels Collection",
+        alt: "Adipoli Diecast Hot Wheels Collection",
       },
     ],
     locale: "en_IN",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Anup Wheels – Ignite Your Collection",
+    title: "Adipoli Diecast – Ignite Your Collection",
     description: "Limited edition die-cast cars and racing legends.",
     images: ["/opengraph-image.png"],
   },

@@ -6,6 +6,7 @@ import FeaturesSection from "@/components/FeaturesSection";
 import HeroSlider from "@/components/HeroSlider";
 import HeroSliderVideo from "@/components/HeroSliderVideo";
 import LoadingSkeleton from "@/components/LoadingSkeleton";
+import PollSection from "@/components/PollSection";
 import ScrollingRibbon from "@/components/ScrollingRibbon";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import WhyChooseUsSection from "@/components/WhyChooseUsSection";
@@ -28,11 +29,15 @@ export default async function Home() {
       <div className="mx-auto max-w-7xl space-y-16 px-5 py-16">
         {/* Featured Products */}
         <FeaturedProducts />
+
         {/* <Suspense fallback={<LoadingSkeleton />}>
         </Suspense> */}
         {/* {featuredProducts.map((product: any) => (
         <FeaturedSectionProduct key={product._id} product={product} />
       ))} */}
+
+       {/* Poll Section */}
+        <PollSection />
 
         {/* Features Section */}
         <FeaturesSection />

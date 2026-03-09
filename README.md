@@ -1,6 +1,6 @@
-# 🚗 Anup Wheels
+# 🚗 Adipoli Diecast
 
-Welcome to **Anup Wheels**, a fully-featured online **Hot Wheels & die-cast collectible store** built for car enthusiasts and collectors.
+Welcome to **Adipoli Diecast**, a fully-featured online **Hot Wheels & die-cast collectible store** built for car enthusiasts and collectors.
 
 This platform delivers a modern, high-performance shopping experience with dynamic inventory management, product filtering, reviews, and secure checkout.
 
@@ -11,7 +11,7 @@ This platform delivers a modern, high-performance shopping experience with dynam
 
 ## 🌟 Website Overview
 
-**Anup Wheels** is designed for collectors who appreciate:
+**Adipoli Diecast** is designed for collectors who appreciate:
 
 - Limited editions
 - Rare die-cast models
@@ -26,18 +26,21 @@ The platform is optimized for speed, SEO, and scalability using modern web techn
 ## ✨ Features
 
 ### 🏎️ Dynamic Product Management
+
 - Powered by **Wix Headless Stores API**
 - Real-time inventory synchronization
 - Collection-based categorization
 - Variant & pricing management
 
 ### 🔍 Advanced Filtering & Sorting
+
 - Filter by collections
 - Price range filtering
 - Sorting (Newest, Price Low → High, Price High → Low)
 - Pagination support
 
 ### ⭐ Product Reviews System
+
 - Authenticated customer reviews
 - Star rating system
 - Media attachments (images/videos)
@@ -45,18 +48,21 @@ The platform is optimized for speed, SEO, and scalability using modern web techn
 - Moderation support
 
 ### 🛒 Secure Checkout
+
 - Integrated Wix eCommerce backend
 - Secure transaction handling
 - Order history with status tracking
 - Payment & fulfillment indicators
 
 ### 📦 Order Management
+
 - Infinite scroll order history
 - Payment status badges
 - Fulfillment tracking
 - Delivery address display
 
 ### 🎨 Modern UI/UX
+
 - Built with **Shadcn UI**
 - Styled using **Tailwind CSS**
 - Fully responsive (mobile + desktop)
@@ -104,14 +110,14 @@ The platform is optimized for speed, SEO, and scalability using modern web techn
 
 ## 🤝 Contributing
 
-Interested in contributing to **Anup Wheels**?
+Interested in contributing to **Adipoli Diecast**?
 
 Please reach out to the developer:
 
-🌐 https://mohammadarmaan.co.in  
+🌐 https://mohammadarmaan.co.in
 
 For feature discussions, improvements, or collaboration.
 
 ---
 
-Thank you for visiting **Anup Wheels** — your ultimate destination for premium die-cast collectibles and Hot Wheels legends. 🚗🔥
+Thank you for visiting **Adipoli Diecast** — your ultimate destination for premium die-cast collectibles and Hot Wheels legends. 🚗🔥
