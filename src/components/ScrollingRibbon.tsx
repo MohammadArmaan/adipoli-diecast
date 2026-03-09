@@ -4,9 +4,9 @@ import React from "react";
 export default function ScrollingRibbon() {
   return (
     <div className="mx-auto max-w-7xl px-4">
-      <div className="relative overflow-hidden rounded-lg border border-orange-500/40 shadow-[0_0_40px_hsl(var(--primary)/0.4)]">
+      <div className="relative overflow-hidden rounded-lg border border-red-500/40 shadow-[0_0_40px_hsl(var(--primary)/0.4)]">
         {/* ORANGE TRACK BACKGROUND */}
-        <div className="absolute inset-0 bg-gradient-to-r from-orange-600 via-orange-500 to-yellow-500" />
+        <div className="absolute inset-0 bg-gradient-to-r from-red-600 via-red-500 to-yellow-500" />
 
         {/* Plastic Shine Overlay */}
         <div className="animate-track-shine absolute inset-0 bg-[linear-gradient(120deg,transparent,rgba(255,255,255,0.2),transparent)] opacity-40" />

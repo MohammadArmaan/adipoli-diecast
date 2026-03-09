@@ -21,10 +21,6 @@ export default function FeaturedSectionProduct({
       href={`/products/${product.slug}`}
       className="group relative block h-full"
     >
-      {/*
-        DARK:  zinc-900 → zinc-800 → black   (original)
-        LIGHT: white → slate-50 → slate-100, orange accents preserved
-      */}
       <div className="
         relative h-full overflow-hidden rounded-lg border-2 transition-all duration-500
 
@@ -32,15 +28,15 @@ export default function FeaturedSectionProduct({
         bg-gradient-to-br from-zinc-900 via-zinc-800 to-black
         border-zinc-700
         shadow-[0_8px_30px_rgb(0,0,0,0.6)]
-        hover:shadow-[0_20px_60px_rgba(249,115,22,0.4)]
-        hover:border-orange-500/50
+        hover:shadow-[0_20px_60px_rgba(220,38,38,0.4)]
+        hover:border-red-600/50
 
         /* Light */
         dark:bg-gradient-to-br dark:from-zinc-900 dark:via-zinc-800 dark:to-black
         dark:border-zinc-700
         dark:shadow-[0_8px_30px_rgb(0,0,0,0.6)]
-        dark:hover:shadow-[0_20px_60px_rgba(249,115,22,0.4)]
-        dark:hover:border-orange-500/50
+        dark:hover:shadow-[0_20px_60px_rgba(220,38,38,0.4)]
+        dark:hover:border-red-600/50
 
         [html:not(.dark)_&]:bg-gradient-to-br
         [html:not(.dark)_&]:from-white
@@ -48,8 +44,8 @@ export default function FeaturedSectionProduct({
         [html:not(.dark)_&]:to-slate-100
         [html:not(.dark)_&]:border-slate-200
         [html:not(.dark)_&]:shadow-[0_8px_30px_rgba(0,0,0,0.10)]
-        [html:not(.dark)_&]:hover:shadow-[0_20px_60px_rgba(249,115,22,0.22)]
-        [html:not(.dark)_&]:hover:border-orange-400/60
+        [html:not(.dark)_&]:hover:shadow-[0_20px_60px_rgba(220,38,38,0.22)]
+        [html:not(.dark)_&]:hover:border-red-500/60
       ">
 
         {/* Metallic shine sweep */}
@@ -72,38 +68,32 @@ export default function FeaturedSectionProduct({
 
           {/* Animated road background */}
           <div className="absolute inset-0 z-0">
-            {/* Asphalt / surface */}
             <div className="
               absolute inset-0
               bg-zinc-950
               [html:not(.dark)_&]:bg-slate-100
             " />
 
-            {/* Road lines */}
             <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
-              {/* Centre dashed line */}
               <div className="absolute top-0 left-1/2 w-1 h-full -translate-x-1/2 opacity-0 group-hover:opacity-60 transition-opacity duration-300">
                 <div className="road-dashes h-full bg-yellow-400 [html:not(.dark)_&]:bg-yellow-500" />
               </div>
-              {/* Left edge */}
               <div className="absolute top-0 left-[15%] w-0.5 h-full opacity-0 group-hover:opacity-40 transition-opacity duration-300">
                 <div className="road-line h-full bg-white [html:not(.dark)_&]:bg-slate-400" />
               </div>
-              {/* Right edge */}
               <div className="absolute top-0 right-[15%] w-0.5 h-full opacity-0 group-hover:opacity-40 transition-opacity duration-300">
                 <div className="road-line h-full bg-white [html:not(.dark)_&]:bg-slate-400" />
               </div>
 
-              {/* Speed lines */}
+              {/* Speed lines — red theme */}
               <div className="speed-lines-container absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="speed-line absolute top-[20%] left-0 h-0.5 w-full bg-gradient-to-r from-transparent via-orange-500/30 to-transparent" />
-                <div className="speed-line absolute top-[40%] left-0 h-0.5 w-full bg-gradient-to-r from-transparent via-red-500/20 to-transparent animation-delay-150" />
-                <div className="speed-line absolute top-[60%] left-0 h-0.5 w-full bg-gradient-to-r from-transparent via-yellow-500/20 to-transparent animation-delay-300" />
-                <div className="speed-line absolute top-[80%] left-0 h-0.5 w-full bg-gradient-to-r from-transparent via-orange-500/30 to-transparent animation-delay-450" />
+                <div className="speed-line absolute top-[20%] left-0 h-0.5 w-full bg-gradient-to-r from-transparent via-red-600/30 to-transparent" />
+                <div className="speed-line absolute top-[40%] left-0 h-0.5 w-full bg-gradient-to-r from-transparent via-rose-500/20 to-transparent animation-delay-150" />
+                <div className="speed-line absolute top-[60%] left-0 h-0.5 w-full bg-gradient-to-r from-transparent via-red-400/20 to-transparent animation-delay-300" />
+                <div className="speed-line absolute top-[80%] left-0 h-0.5 w-full bg-gradient-to-r from-transparent via-red-600/30 to-transparent animation-delay-450" />
               </div>
             </div>
 
-            {/* Road depth gradient */}
             <div className="
               absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500
               bg-gradient-to-b from-transparent via-transparent to-zinc-950/50
@@ -126,14 +116,14 @@ export default function FeaturedSectionProduct({
           <div className="
             absolute bottom-10 left-1/4 w-40 h-40 rounded-full blur-3xl z-[5]
             bg-white/20
-            [html:not(.dark)_&]:bg-orange-200/30
+            [html:not(.dark)_&]:bg-red-200/30
             transition-all duration-700 opacity-0
             group-hover:opacity-60 group-hover:translate-x-8
           " />
           <div className="
             absolute bottom-5 left-1/3 w-32 h-32 rounded-full blur-2xl z-[5]
-            bg-orange-500/20
-            [html:not(.dark)_&]:bg-orange-300/25
+            bg-red-600/20
+            [html:not(.dark)_&]:bg-red-300/25
             transition-all duration-700 delay-100 opacity-0
             group-hover:opacity-40 group-hover:translate-x-12
           " />
@@ -158,24 +148,24 @@ export default function FeaturedSectionProduct({
               src={CarAnimate}
               alt="Drifting Car"
               fill
-              className="object-contain drop-shadow-[0_0_30px_rgba(249,115,22,0.6)]"
+              className="object-contain drop-shadow-[0_0_30px_rgba(220,38,38,0.6)]"
             />
           </div>
 
           {/* Headlight beams */}
           <div className="absolute top-1/2 left-0 w-full h-32 -translate-y-1/2 opacity-0 group-hover:opacity-30 transition-opacity duration-500 z-[15]">
-            <div className="absolute inset-0 bg-gradient-to-r from-yellow-200/0 via-yellow-200/40 to-yellow-200/0 blur-xl transform -skew-y-12" />
+            <div className="absolute inset-0 bg-gradient-to-r from-red-200/0 via-red-200/40 to-red-200/0 blur-xl transform -skew-y-12" />
           </div>
 
-          {/* Sparks */}
+          {/* Sparks — red/rose tones */}
           <div className="absolute top-1/3 right-1/4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
-            <div className="spark w-1 h-1 bg-yellow-400 rounded-full shadow-[0_0_8px_rgba(250,204,21,0.8)]" />
+            <div className="spark w-1 h-1 bg-red-400 rounded-full shadow-[0_0_8px_rgba(248,113,113,0.8)]" />
           </div>
           <div className="absolute top-1/2 right-1/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100 z-20">
-            <div className="spark w-1.5 h-1.5 bg-orange-400 rounded-full shadow-[0_0_10px_rgba(251,146,60,0.8)]" />
+            <div className="spark w-1.5 h-1.5 bg-rose-400 rounded-full shadow-[0_0_10px_rgba(251,113,133,0.8)]" />
           </div>
           <div className="absolute top-2/3 right-[40%] opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200 z-20">
-            <div className="spark w-1 h-1 bg-red-400 rounded-full shadow-[0_0_8px_rgba(248,113,113,0.8)]" />
+            <div className="spark w-1 h-1 bg-red-300 rounded-full shadow-[0_0_8px_rgba(252,165,165,0.8)]" />
           </div>
 
           {/* Vignette */}
@@ -185,17 +175,17 @@ export default function FeaturedSectionProduct({
             [html:not(.dark)_&]:to-white/60
           " />
 
-          {/* Orange underglow */}
+          {/* Red underglow */}
           <div className="
             absolute inset-0 z-[15] transition-opacity duration-500 opacity-0 group-hover:opacity-100
-            bg-gradient-to-t from-orange-600/40 via-transparent to-transparent
-            [html:not(.dark)_&]:from-orange-400/25
+            bg-gradient-to-t from-red-700/40 via-transparent to-transparent
+            [html:not(.dark)_&]:from-red-500/25
           " />
 
           {/* Badges */}
           <div className="absolute left-3 top-3 z-30 flex flex-col gap-2">
             {product.ribbon && (
-              <Badge className="bg-gradient-to-r from-orange-600 to-red-600 text-white border-none shadow-lg font-bold tracking-wider uppercase text-xs">
+              <Badge className="bg-gradient-to-r from-red-700 to-rose-700 text-white border-none shadow-lg font-bold tracking-wider uppercase text-xs">
                 {product.ribbon}
               </Badge>
             )}
@@ -205,8 +195,8 @@ export default function FeaturedSectionProduct({
           {/* Price badge */}
           <div className="absolute bottom-3 right-3 z-30">
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-orange-600 to-red-700 blur-md opacity-50" />
-              <Badge className="relative bg-gradient-to-br from-orange-600 via-orange-500 to-red-600 text-white border-2 border-orange-400/30 shadow-[inset_0_1px_0_rgba(255,255,255,0.3)] font-black text-sm px-4 py-1.5">
+              <div className="absolute inset-0 bg-gradient-to-br from-red-700 to-rose-800 blur-md opacity-50" />
+              <Badge className="relative bg-gradient-to-br from-red-700 via-red-600 to-rose-700 text-white border-2 border-red-400/30 shadow-[inset_0_1px_0_rgba(255,255,255,0.3)] font-black text-sm px-4 py-1.5">
                 {getFormattedPrice(product)}
               </Badge>
             </div>
@@ -232,14 +222,14 @@ export default function FeaturedSectionProduct({
           <div className="relative">
             <h3 className="
               font-black text-base tracking-wide uppercase text-center transition-colors duration-300
-              text-white group-hover:text-orange-500
-              [html:not(.dark)_&]:text-slate-800 [html:not(.dark)_&]:group-hover:text-orange-600
+              text-white group-hover:text-red-500
+              [html:not(.dark)_&]:text-slate-800 [html:not(.dark)_&]:group-hover:text-red-700
             ">
               {product.name}
             </h3>
 
-            {/* Racing stripe */}
-            <div className="h-1 bg-gradient-to-r from-transparent via-orange-600 to-transparent rounded-full mt-3 transition-all duration-500 opacity-0 group-hover:opacity-100 mx-auto w-0 group-hover:w-3/4" />
+            {/* Racing stripe — red */}
+            <div className="h-1 bg-gradient-to-r from-transparent via-red-600 to-transparent rounded-full mt-3 transition-all duration-500 opacity-0 group-hover:opacity-100 mx-auto w-0 group-hover:w-3/4" />
           </div>
         </div>
 

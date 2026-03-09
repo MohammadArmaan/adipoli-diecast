@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-accent py-10 sm:pt-16 lg:pt-24">
+    <footer className="bg-accent dark:bg-primary/30 py-10 sm:pt-16 lg:pt-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 gap-x-12 gap-y-16 md:col-span-3 lg:grid-cols-6">
           <div className="col-span-2 md:col-span-3 lg:col-span-2 lg:pr-8">
@@ -17,7 +17,7 @@ export default function Footer() {
                 width={50}
                 alt="Adipoli Diecast Logo"
               />
-              <span className="text-primary">Adipoli Diecast</span>
+              <span className="text-primary">ADIPOLI DIECAST</span>
             </div>
             <p className="mt-7 text-base leading-relaxed text-muted-foreground">
               Adipoli Diecast — your destination for premium die-cast

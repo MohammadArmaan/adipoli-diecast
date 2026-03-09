@@ -4,7 +4,7 @@
 
 @import "~react-medium-image-zoom/dist/styles.css";
 
-@layer base {
+/* @layer base {
   :root {
     --background: 0 0% 100%;
     --foreground: 224 71% 4%;
@@ -82,6 +82,96 @@
     --chart-4: 0 0% 20%;
     --chart-5: 45 100% 55%;
   }
+} */
+
+@layer base {
+  :root {
+    /* Backgrounds */
+    --background: 0 0% 100%;
+    --foreground: 220 15% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 10%;
+
+    /* 🔴 ADIPOLI RACING RED PRIMARY */
+    --primary: 0 96% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Metallic Grey Secondary */
+    --secondary: 215 10% 55%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Neutral UI */
+    --muted: 210 20% 96%;
+    --muted-foreground: 220 8% 46%;
+
+    /* Light Red Accent */
+    --accent: 0 96% 95%;
+    --accent-foreground: 0 96% 35%;
+
+    --grey: 220 14% 96%;
+
+    --destructive: 0 85% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 90%;
+    --input: 220 13% 90%;
+
+    --ring: 0 96% 45%;
+
+    --radius: 0.75rem;
+
+    /* Chart Colors – Racing Inspired */
+    --chart-1: 0 96% 45%; /* Racing Red */
+    --chart-2: 215 10% 55%; /* Metallic Grey */
+    --chart-3: 0 0% 10%; /* Black */
+    --chart-4: 0 0% 100%; /* White */
+    --chart-5: 45 100% 50%; /* Yellow accent */
+  }
+
+  .dark {
+    /* 🏁 Asphalt Racing Mode */
+    --background: 0 0% 6%;
+    --foreground: 0 0% 96%;
+
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 96%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 96%;
+
+    /* Slightly brighter red in dark mode */
+    --primary: 0 100% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 215 12% 40%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 15% 18%;
+    --muted-foreground: 220 10% 65%;
+
+    --accent: 0 100% 15%;
+    --accent-foreground: 0 100% 70%;
+
+    --grey: 215 28% 17%;
+
+    --destructive: 0 65% 40%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
+
+    --ring: 0 100% 55%;
+
+    --chart-1: 0 100% 55%;
+    --chart-2: 215 12% 50%;
+    --chart-3: 0 0% 85%;
+    --chart-4: 0 0% 20%;
+    --chart-5: 45 100% 55%;
+  }
 }
 
 @layer base {
@@ -93,10 +183,27 @@
   }
 }
 
-.btn-primary {
+/* .btn-primary {
   position: relative;
   background: linear-gradient(135deg, hsl(24 100% 50%), hsl(45 100% 55%));
   overflow: hidden;
+} */
+
+.btn-primary {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    hsl(0 96% 45%),
+    hsl(0 100% 60%)
+  );
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(225, 6, 0, 0.35);
+  transition: all 0.25s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(225, 6, 0, 0.55);
 }
 
 .btn-primary::after {
@@ -111,7 +218,7 @@
     transparent 12px
   );
   opacity: 0.3;
-}
+} 
 
 /* src/styles/animations.css */
 .scroll-animate {
@@ -677,7 +784,8 @@
 
 /* Asphalt texture */
 .asphalt-texture {
-  background-image: repeating-linear-gradient(
+  background-image:
+    repeating-linear-gradient(
       90deg,
       transparent,
       transparent 2px,
@@ -780,5 +888,3 @@
 .animate-speed-lines {
   animation: speedLines 1.2s linear infinite;
 }
-
-

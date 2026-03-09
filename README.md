@@ -4,7 +4,7 @@ Welcome to **Adipoli Diecast**, a fully-featured online **Hot Wheels & die-cast 
 
 This platform delivers a modern, high-performance shopping experience with dynamic inventory management, product filtering, reviews, and secure checkout.
 
-🔗 **Live Website:** https://anup-wheels.vercel.app  
+🔗 **Live Website:** https://adipoli-diecast.vercel.app  
 👨‍💻 **Developer:** Mohammad Armaan
 
 ---
